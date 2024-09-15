@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Calculator-All in One Calculator</title>
+    <link rel="stylesheet" href="calc.css">
+    <link rel="stylesheet" href="calc.js">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul id="first">
+                <li>Sign up</li>
+                <li>Service</li>
+                <li>About us</li>
+            </ul>
+            <img src="logo.png" alt="">
+            <ul id="second">
+                <li>Help</li>
+                <li>Contact</li>
+                <li>Home</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="sub">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3 class="animate-charcter">All in One Calculator</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="text">
+            <img src="calc1.jpg" alt="">
+            <span>
+                <h4>Welcome to All in One Calculator <br><br> We provide certain types of Calculator. <br><br> Get ready
+                    to calculate!!</h4>
+            </span>
+        </div>
+
+        <div class="arrow"></div>
+    </div>
+
+    <div class="below">
+        <h3>Choose Your Calculator</h3>
+        <div class="calc" id="simple">
+            <h2>&#x21c9;&nbsp;&nbsp;Conversion Calculator</h2>
+            <img src="simple.png" alt="">
+
+        </div>
+        <div class="calc" id="math">
+            <h2>&#x21c9;&nbsp;&nbsp;Math Calculator</h2>
+            <img src="math.jpg" alt="">
+        </div>
+        <div class="calc" id="financial">
+            <h2>&#x21c9;&nbsp;&nbsp;Financial Calculator</h2>
+            <img src="financial.jpg" alt="">
+        </div>
+        <div class="calc" id="fitness">
+            <h2>&#x21c9;&nbsp;&nbsp;Health & Fitness Calculator</h2>
+            <img src="health.png" alt="">
+        </div>
+
+    </div>
+
+    <div class="showCalc">
+
+        <div class="simpleCalc">
+            <button class="cancel"><i class="material-icons" style="font-size:35px;color:red">cancel</i></button>
+            <table class="calculator">
+                <tr>
+                    <td colspan="3"> <input class="display-box" type="text" id="result" disabled /> </td>
+
+                    <!-- clearScreen() function clears all the values -->
+                    <td> <input type="button" class="size" value="C" onclick="clearScreen()" id="btn" /> </td>
+                </tr>
+                <tr>
+                    <!-- display() function displays the value of clicked button -->
+                    <td> <input type="button" value="1" onclick="display('1')" /> </td>
+                    <td> <input type="button" value="2" onclick="display('2')" /> </td>
+                    <td> <input type="button" value="3" onclick="display('3')" /> </td>
+                    <td> <input type="button" class="size" value="/" onclick="display('/')" /> </td>
+                </tr>
+                <tr>
+                    <td> <input type="button" value="4" onclick="display('4')" /> </td>
+                    <td> <input type="button" value="5" onclick="display('5')" /> </td>
+                    <td> <input type="button" value="6" onclick="display('6')" /> </td>
+                    <td> <input type="button" class="size" value="-" onclick="display('-')" /> </td>
+                </tr>
+                <tr>
+                    <td> <input type="button" value="7" onclick="display('7')" /> </td>
+                    <td> <input type="button" value="8" onclick="display('8')" /> </td>
+                    <td> <input type="button" value="9" onclick="display('9')" /> </td>
+                    <td> <input type="button" class="size" value="+" onclick="display('+')" /> </td>
+                </tr>
+                <tr>
+                    <td> <input type="button" value="." onclick="display('.')" /> </td>
+                    <td> <input type="button" class="size" value="0" onclick="display('0')" /> </td>
+
+                    <!-- calculate() function evaluates the mathematical expression -->
+                    <td> <input type="button" value="=" onclick="calculate()" id="btn" /> </td>
+                    <td> <input type="button" class="size" value="*" onclick="display('*')" /> </td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="converCalc">
+            <button class="cancel0"><i class="material-icons" style="font-size:35px;color:red">cancel</i></button>
+            <span>
+                <h2 id="Conversion">Weight Converter</h2><br>
+                <hr>
+                <h2 id="Conversion">Height Converter</h2><br>
+                <hr>
+                <h2 id="Conversion">Currency Converter</h2><br>
+            </span>
+        </div>
+
+        <div class="mathCalc">
+            <button class="cancel1"><i class="material-icons" style="font-size:35px;color:red">cancel</i></button>
+            <span>
+                <h2 id="basicCalc">Basic Calculator</h2><br>
+                <hr>
+                <h2 id="basicCalc">Scientific Calculator</h2><br>
+                <hr>
+                <h2 id="basicCalc">Fraction Calculator</h2><br>
+                <hr>
+                <h2 id="basicCalc">Triangle Calculator</h2><br>
+            </span>
+        </div>
+
+        <div class="financialCalc">
+            <button class="cancel2"><i class="material-icons" style="font-size:35px;color:red">cancel</i></button>
+            <span>
+                <h2>Loan Calculator</h2><br>
+                <hr>
+                <h2>Interest Calculator</h2><br>
+                <hr>
+                <h2>Finance Calculator</h2><br>
+                <hr>
+                <h2>Income Tax Calculator</h2><br>
+                <hr>
+                <h2>Salary Calculator</h2><br>
+            </span>
+        </div>
+
+        <div class="healthCalc">
+            <button class="cancel3"><i class="material-icons" style="font-size:35px;color:red">cancel</i></button>
+            <span>
+                <h2>BMI Calculator</h2><br>
+                <hr>
+                <h2>Calorie Calculator</h2><br>
+                <hr>
+                <h2>Body Fat Calculator</h2><br>
+                <hr>
+                <h2>Ideal Weight Calculator</h2><br>
+                <hr>
+                <h2>BMR Calculator</h2><br>
+            </span>
+        </div>
+
+        <div class="weight">
+            <h2>Weight Converter</h2>
+            <input type="text" id="weightIP1" ><br>
+            <span>Select Conversion</span><select name="" id="weightSelect">
+                <option value="kg">KG(Kilograms)</option>
+                <option value="pounds">lbs(Pounds)</option>
+            </select><br>
+            <input type="text" id="showOP"><br>
+            <button id="calcuateWgt">Calculate</button><button>Reset</button>
+
+        </div>
+    </div>
+    <script src="JqueryFile.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".converCalc").hide();
+            $("#simple").click(function () {
+                $(".converCalc").show();
+                $(".below").css("filter", "blur(10px)");
+            });
+
+            $(".cancel0").click(function () {
+                $(".converCalc").hide();
+                $(".below").css("filter", "none");
+            });
+
+
+            $("#math").click(function () {
+                $(".below").css("filter", "blur(10px)");
+            });
+
+            $("#financial").click(function () {
+                $(".below").css("filter", "blur(10px)");
+            });
+
+
+            $("#fitness").click(function () {
+                $(".below").css("filter", "blur(10px)");
+            });
+
+
+            $(".simpleCalc").hide();
+            $("#basicCalc").click(function () {
+                $(".simpleCalc").show();
+                $(".mathCalc").css("position", "relative");
+                $(".mathCalc").css("left", "25%");
+            });
+
+            $(".cancel").click(function () {
+                $(".simpleCalc").hide();
+                $(".below").css("filter", "none");
+            });
+
+            $(".mathCalc").hide();
+            $("#math").click(function () {
+                $(".mathCalc").show();
+            });
+
+            $(".cancel1").click(function () {
+                $(".mathCalc").hide();
+                $(".below").css("filter", "none");
+            });
+
+            $(".financialCalc").hide();
+            $("#financial").click(function () {
+                $(".financialCalc").show();
+            });
+
+            $(".cancel2").click(function () {
+                $(".financialCalc").hide();
+                $(".below").css("filter", "none");
+            });
+
+            $(".healthCalc").hide();
+            $("#fitness").click(function () {
+                $(".healthCalc").show();
+            });
+
+            $(".cancel3").click(function () {
+                $(".healthCalc").hide();
+                $(".below").css("filter", "none");
+            });
+        });
+    </script>
+    <script>
+        function clearScreen() {
+            document.getElementById("result").value = "";
+        }
+
+        // This function displays the values
+        function display(value) {
+            document.getElementById("result").value += value;
+        }
+
+        // This function evaluates the expression and returns the result
+        function calculate() {
+            var p = document.getElementById("result").value;
+            var q = eval(p);
+            document.getElementById("result").value = q;
+        }
+
+        function clearScreen() {
+            document.getElementById("result").value = "";
+        }
+
+        function display(value) {
+            document.getElementById("result").value += value;
+        }
+
+        function calculate() {
+            var p = document.getElementById("result").value;
+            var q = eval(p);
+            document.getElementById("result").value = q;
+        }
+
+        let calc = document.getElementById("calcuateWgt");
+        let valueInt=document.getElementById("weightIP1");
+
+        calc.addEventListener("click", (event) => {
+            //console.log("Clicked");
+            console.log(valueInt);
+        })
+    </script>
+</body>
+
+</html>

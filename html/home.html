@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All in One Calculator-Home</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul id="first">
+                <li>Sign up</li>
+                <li>Service</li>
+                <li>About us</li>
+            </ul>
+            <img src="logo.png" alt="">
+            <ul id="second">
+                <li>Help</li>
+                <li>Contact</li>
+                <li>Home</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="sub">
+        <img src="calc.png" alt="">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3 class="animate-charcter">All in One Calculator</h3>
+                </div>
+            </div>
+        </div>
+        <div class='console-container'><span id='text'></span>
+            <div class='console-underscore' id='console'>&#95;</div>
+        </div>
+        <div class="info">
+            <span>
+                <h5>All in One Calculator's focus is to provide fast, comprehensive,convenient, free online
+                    calculators<br><br>
+                    in a plethora of areas. Currently, we have around 200 calculators to help you "do the math"
+                    <br><br>quickly
+                    in areas such as finance, fitness, health, math, and others, and we are still developing
+                    more.<br><br> Our
+                    goal is to become the one-stop, go-to site for people who need to make quick calculations.<br><br>
+                    Additionally, we believe the internet should be a source of free information. Therefore,<br><br> all
+                    of our
+                    tools and services are completely free, with no registration required.</h5>
+            </span>
+            <button><a href="calc.html">Let's Get Started</a></button>
+
+        </div>
+    </div>
+
+    <script>
+        // function([string1, string2],target id,[color1,color2])    
+        consoleText(['Lets get Started...', 'Calculate Anything...', 'Made with Love...'], 'text', ['black', 'black', 'black']);
+
+        function consoleText(words, id, colors) {
+            if (colors === undefined) colors = ['#fff'];
+            var visible = true;
+            var con = document.getElementById('console');
+            var letterCount = 1;
+            var x = 1;
+            var waiting = false;
+            var target = document.getElementById(id)
+            target.setAttribute('style', 'color:' + colors[0])
+            window.setInterval(function () {
+
+                if (letterCount === 0 && waiting === false) {
+                    waiting = true;
+                    target.innerHTML = words[0].substring(0, letterCount)
+                    window.setTimeout(function () {
+                        var usedColor = colors.shift();
+                        colors.push(usedColor);
+                        var usedWord = words.shift();
+                        words.push(usedWord);
+                        x = 1;
+                        target.setAttribute('style', 'color:' + colors[0])
+                        letterCount += x;
+                        waiting = false;
+                    }, 1000)
+                } else if (letterCount === words[0].length + 1 && waiting === false) {
+                    waiting = true;
+                    window.setTimeout(function () {
+                        x = -1;
+                        letterCount += x;
+                        waiting = false;
+                    }, 1000)
+                } else if (waiting === false) {
+                    target.innerHTML = words[0].substring(0, letterCount)
+                    letterCount += x;
+                }
+            }, 120)
+            window.setInterval(function () {
+                if (visible === true) {
+                    con.className = 'console-underscore hidden'
+                    visible = false;
+
+                } else {
+                    con.className = 'console-underscore'
+
+                    visible = true;
+                }
+            }, 400)
+        }
+    </script>
+</body>
+
+</html>
